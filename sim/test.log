@@ -1,0 +1,38 @@
+# vsim -debugDB -l test.log -voptargs="+acc" -assertdebug -c test_bench -do "log -r /*;run -all;" -GMEALY_FSM=0 
+# Start time: 18:23:10 on Sep 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Warning: (vopt-3040) Command line generic/parameter "MEALY_FSM" not found in design.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.test_bench(fast)
+# Loading work.timer_top(fast)
+# Loading work.apb_slave(fast)
+# Loading work.register(fast)
+# Loading work.counter_control(fast)
+# Loading work.counter(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# run -all
+# ---Start Write---
+# ---Capture Data---
+# TDR0; 32'd0
+# ** Note: $finish    : ../tb/test_bench.sv(107)
+#    Time: 10425 ns  Iteration: 1  Instance: /test_bench
+# End time: 18:23:10 on Sep 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2

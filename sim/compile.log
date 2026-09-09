@@ -1,0 +1,14 @@
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+Start time: 18:23:09 on Sep 09,2026
+vlog -f compile.f 
+-- Compiling module register
+-- Compiling module counter_control
+-- Compiling module counter
+-- Compiling module apb_slave
+-- Compiling module timer_top
+-- Compiling module test_bench
+
+Top level modules:
+	test_bench
+End time: 18:23:09 on Sep 09,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

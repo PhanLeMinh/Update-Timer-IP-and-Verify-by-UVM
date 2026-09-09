@@ -1,0 +1,167 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/minhphan/project/timer_ip_v2/sim
+T_opt
+!s110 1788952990
+V^U[4E]TXcCMocYHcIS69k0
+04 10 4 work test_bench fast 0
+=1-709cd1130f51-6aa1419e-601c6-c792
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -G MEALY_FSM=0 -debugdb +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+vapb_slave
+Z3 2../rtl_final/register.v|../rtl_final/counter_control.v|../rtl_final/counter.v|../rtl_final/apb_slave.v|../rtl_final/timer_top.v|../tb/test_bench.sv
+Z4 !s110 1788952989
+!i10b 1
+!s100 ki]Q3<eQWZESI][eXdMH62
+I=h9WKPb@c?4dUj94>Z8883
+R1
+Z5 w1787039759
+8../rtl_final/apb_slave.v
+F../rtl_final/apb_slave.v
+!i122 0
+L0 1 46
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z8 !s108 1788952989.000000
+Z9 !s107 ../tb/test_bench.sv|../rtl_final/timer_top.v|../rtl_final/apb_slave.v|../rtl_final/counter.v|../rtl_final/counter_control.v|../rtl_final/register.v|
+Z10 !s90 -f|compile.f|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vcounter
+R3
+R4
+!i10b 1
+!s100 WQk08c`zc@X3HNgVeAEN`0
+I=_G5bzfc[==`JehjKWMi03
+R1
+R5
+8../rtl_final/counter.v
+F../rtl_final/counter.v
+!i122 0
+L0 1 64
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R2
+vcounter_control
+R3
+R4
+!i10b 1
+!s100 C4lK?G4XIFSRmI]KR;PM00
+I4a4k=g2P5g^T_9jlnAfKf1
+R1
+w1788902946
+8../rtl_final/counter_control.v
+F../rtl_final/counter_control.v
+!i122 0
+L0 1 56
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R2
+vregister
+R3
+R4
+!i10b 1
+!s100 df0>JMH0eLORQG1H1079U3
+IIdz52VolGM?;13E[lRk?R3
+R1
+w1788857930
+8../rtl_final/register.v
+F../rtl_final/register.v
+!i122 0
+L0 1 295
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R2
+vtest_bench
+R3
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R4
+!i10b 1
+!s100 kOEPmdO13iSn4I]oa5;GJ1
+I;[;DOck;@I1Figh:03V_j1
+S1
+R1
+w1788952984
+8../tb/test_bench.sv
+F../tb/test_bench.sv
+!i122 0
+L0 3 108
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R2
+vtimer_top
+R3
+R4
+!i10b 1
+!s100 <`W4h3k3A2XBR2KJ6NdN[0
+IO?OJN89NK]NVWfgoz>XbA2
+R1
+w1788903078
+8../rtl_final/timer_top.v
+F../rtl_final/timer_top.v
+!i122 0
+L0 1 92
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R2

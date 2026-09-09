@@ -1,0 +1,2 @@
+var g_data = {"0":"apb_pslverr_chk","1":"cnt_counting_chk","2":"cnt_crtl_chk","3":"cnt_halt_chk","4":"interrupt_chk","5":"reg_byte_access","6":"reg_init_chk","7":"reg_reserved_chk","8":"reg_wr_chk"};
+processTestsData(g_data);

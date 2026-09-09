@@ -1,0 +1,916 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /test_bench/dut/module1
+=== Design Unit: work.apb_slave
+=================================================================================
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         4         2    66.66%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench/dut/module1 --
+
+  File ../../rtl_final/apb_slave.v
+
+----------------Focused Condition View-------------------
+Line       37 Item    1  ((~pwrite & psel) & penable)
+Condition totals: 1 of 3 input terms covered = 33.33%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      pwrite         N  '_1' not hit             Hit '_1'
+        psel         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          9  pwrite_0              (penable && psel)             
+  Row   2:    ***0***  pwrite_1              (penable && psel)             
+  Row   3:    ***0***  psel_0                (penable && ~pwrite)          
+  Row   4:          9  psel_1                (penable && ~pwrite)          
+  Row   5:          9  penable_0             (~pwrite & psel)              
+  Row   6:          9  penable_1             (~pwrite & psel)              
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      6         5         1    83.33%
+
+================================Expression Details================================
+
+Expression Coverage for instance /test_bench/dut/module1 --
+
+  File ../../rtl_final/apb_slave.v
+
+----------------Focused Expression View-----------------
+Line       16 Item    1  ((~pwrite & psel) & penable)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+        psel         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          9  pwrite_0              (penable && psel)             
+  Row   2:          8  pwrite_1              (penable && psel)             
+  Row   3:    ***0***  psel_0                (penable && ~pwrite)          
+  Row   4:          9  psel_1                (penable && ~pwrite)          
+  Row   5:          9  penable_0             (~pwrite & psel)              
+  Row   6:          9  penable_1             (~pwrite & psel)              
+
+
+
+=================================================================================
+=== Instance: /test_bench/dut/module2
+=== Design Unit: work.register
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        62        60         2    96.77%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench/dut/module2
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../../rtl_final/register.v
+------------------------------------CASE Branch------------------------------------
+    105             1                    ***0***     		default:  reg_sel = 8'b0000_0000;
+Branch totals: 8 hits of 9 branches = 88.88%
+
+------------------------------------CASE Branch------------------------------------
+    318             1                    ***0***                    		 default:  rdata_r = 32'h0;
+Branch totals: 8 hits of 9 branches = 88.88%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      29        28         1    96.55%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench/dut/module2 --
+
+  File ../../rtl_final/register.v
+----------------Focused Condition View-------------------
+Line       130 Item    1  ((((~pslverr & (tim_pwdata[11:8] <= 8)) & wr_en) & reg_sel[0]) & tim_pstrb[1])
+Condition totals: 4 of 5 input terms covered = 80.00%
+
+               Input Term   Covered  Reason for no coverage   Hint
+              -----------  --------  -----------------------  --------------
+  (tim_pwdata[11:8] <= 8)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                 Non-masking condition(s)      
+ ---------  ---------  --------------------       -------------------------     
+  Row   1:          8  pslverr_0                  (tim_pstrb[1] && reg_sel[0] && wr_en && (tim_pwdata[11:8] <= 8))
+  Row   2:          2  pslverr_1                  (tim_pstrb[1] && reg_sel[0] && wr_en && (tim_pwdata[11:8] <= 8))
+  Row   3:    ***0***  (tim_pwdata[11:8] <= 8)_0  (tim_pstrb[1] && reg_sel[0] && wr_en && ~pslverr)
+  Row   4:          8  (tim_pwdata[11:8] <= 8)_1  (tim_pstrb[1] && reg_sel[0] && wr_en && ~pslverr)
+  Row   5:          8  wr_en_0                    (tim_pstrb[1] && reg_sel[0] && (~pslverr & (tim_pwdata[11:8] <= 8)))
+  Row   6:          8  wr_en_1                    (tim_pstrb[1] && reg_sel[0] && (~pslverr & (tim_pwdata[11:8] <= 8)))
+  Row   7:          4  reg_sel[0]_0               (tim_pstrb[1] && ((~pslverr & (tim_pwdata[11:8] <= 8)) & wr_en))
+  Row   8:          8  reg_sel[0]_1               (tim_pstrb[1] && ((~pslverr & (tim_pwdata[11:8] <= 8)) & wr_en))
+  Row   9:          8  tim_pstrb[1]_0             (((~pslverr & (tim_pwdata[11:8] <= 8)) & wr_en) & reg_sel[0])
+ Row   10:          8  tim_pstrb[1]_1             (((~pslverr & (tim_pwdata[11:8] <= 8)) & wr_en) & reg_sel[0])
+
+
+
+
+
+
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      75        73         2    97.33%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench/dut/module2 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../../rtl_final/register.v
+    105             1     		default:  reg_sel = 8'b0000_0000;
+    318             1                    		 default:  rdata_r = 32'h0;
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        894       520       374    58.16%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/dut/module2 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                    compare_val[0]           2           1      100.00 
+                                    compare_val[1]           1           1      100.00 
+                                    compare_val[2]           2           1      100.00 
+                                    compare_val[3]           1           1      100.00 
+                                 compare_val[4-63]           2           1      100.00 
+                                            div_en           2           2      100.00 
+                               div_en_timer_en_err           2           2      100.00 
+                                        div_en_tmp           2           2      100.00 
+                                        div_val[0]           7           3      100.00 
+                                        div_val[1]           2           2      100.00 
+                                        div_val[2]           2           3      100.00 
+                                        div_val[3]           2           2      100.00 
+                                       div_val_err           2           2      100.00 
+                              div_val_timer_en_err           2           2      100.00 
+                                    div_val_tmp[0]           7           3      100.00 
+                                    div_val_tmp[1]           2           2      100.00 
+                                    div_val_tmp[2]           2           3      100.00 
+                                    div_val_tmp[3]           2           2      100.00 
+                                          halt_ack           1           1      100.00 
+                                          halt_req           3           3      100.00 
+                                        halt_req_r           3           3      100.00 
+                                           int_clr           3           3      100.00 
+                                            int_en           1           2      100.00 
+                                           int_set           2           3      100.00 
+                                            int_st           2           3      100.00 
+                                        rdata_r[0]           7           7      100.00 
+                                        rdata_r[1]           6           6      100.00 
+                                        rdata_r[2]           5           5      100.00 
+                                      rdata_r[3-6]           4           4      100.00 
+                                        rdata_r[7]           3           3      100.00 
+                                        rdata_r[8]           6           6      100.00 
+                                        rdata_r[9]           4           4      100.00 
+                                       rdata_r[10]           5           5      100.00 
+                                       rdata_r[11]           4           4      100.00 
+                                    rdata_r[12-31]           3           3      100.00 
+                                        reg_sel[0]           8           5      100.00 
+                                        reg_sel[1]           5           5      100.00 
+                                        reg_sel[2]           4           5      100.00 
+                                      reg_sel[3-5]           4           4      100.00 
+                                        reg_sel[6]           3           4      100.00 
+                                        reg_sel[7]           1           5      100.00 
+                                        tcmp0_r[0]           2           1      100.00 
+                                        tcmp0_r[1]           1           1      100.00 
+                                        tcmp0_r[2]           2           1      100.00 
+                                        tcmp0_r[3]           1           1      100.00 
+                                     tcmp0_r[4-31]           2           1      100.00 
+                                      tcmp0_tmp[0]           2           1      100.00 
+                                      tcmp0_tmp[1]           1           1      100.00 
+                                      tcmp0_tmp[2]           2           1      100.00 
+                                      tcmp0_tmp[3]           1           1      100.00 
+                                   tcmp0_tmp[4-31]           2           1      100.00 
+                                     tcmp1_r[0-31]           2           1      100.00 
+                                   tcmp1_tmp[0-31]           2           1      100.00 
+                                     tcr_tmp[0-31]           0           0        0.00 
+                                      thcsr_tmp[0]           3           3      100.00 
+                                      thcsr_tmp[1]           1           1      100.00 
+                                   thcsr_tmp[2-31]           0           0        0.00 
+                                         tier_r[0]           1           2      100.00 
+                                      tier_r[1-31]           0           0        0.00 
+                                       tier_tmp[0]           1           2      100.00 
+                                    tier_tmp[1-31]           0           0        0.00 
+                                          timer_en           5           7      100.00 
+                                       timer_en_1d           5           7      100.00 
+                                      timer_en_tmp           5           7      100.00 
+                                         tisr_r[0]           2           3      100.00 
+                                      tisr_r[1-31]           0           0        0.00 
+                                    tisr_tmp[0-31]           0           0        0.00 
+
+Total Node Count     =        447 
+Toggled Node Count   =        260 
+Untoggled Node Count =        187 
+
+Toggle Coverage      =      58.16% (520 of 894 bins)
+
+=================================================================================
+=== Instance: /test_bench/dut/module3
+=== Design Unit: work.counter_control
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                     16        13         3    81.25%
+
+================================Expression Details================================
+
+Expression Coverage for instance /test_bench/dut/module3 --
+
+  File ../../rtl_final/counter_control.v
+
+----------------Focused Expression View-----------------
+Line       21 Item    1  ((div_en & timer_en) & (div_val == 0))
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+      Input Term   Covered  Reason for no coverage   Hint
+     -----------  --------  -----------------------  --------------
+        timer_en         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          4  div_en_0              ((div_val == 0) && timer_en)  
+  Row   2:          2  div_en_1              ((div_val == 0) && timer_en)  
+  Row   3:    ***0***  timer_en_0            ((div_val == 0) && div_en)    
+  Row   4:          2  timer_en_1            ((div_val == 0) && div_en)    
+  Row   5:          1  (div_val == 0)_0      (div_en & timer_en)           
+  Row   6:          2  (div_val == 0)_1      (div_en & timer_en)           
+
+----------------Focused Expression View-----------------
+Line       22 Item    1  (((div_en & timer_en) & (div_val != 0)) & (int_cnt == limit))
+Expression totals: 3 of 4 input terms covered = 75.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+            timer_en         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  div_en_0              ((int_cnt == limit) && (div_val != 0) && timer_en)
+  Row   2:          1  div_en_1              ((int_cnt == limit) && (div_val != 0) && timer_en)
+  Row   3:    ***0***  timer_en_0            ((int_cnt == limit) && (div_val != 0) && div_en)
+  Row   4:          1  timer_en_1            ((int_cnt == limit) && (div_val != 0) && div_en)
+  Row   5:          2  (div_val != 0)_0      ((int_cnt == limit) && (div_en & timer_en))
+  Row   6:          1  (div_val != 0)_1      ((int_cnt == limit) && (div_en & timer_en))
+  Row   7:          1  (int_cnt == limit)_0  ((div_en & timer_en) & (div_val != 0))
+  Row   8:          1  (int_cnt == limit)_1  ((div_en & timer_en) & (div_val != 0))
+
+----------------Focused Expression View-----------------
+Line       23 Item    1  ((timer_en ~& div_en) | (limit == int_cnt))
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+            timer_en         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  timer_en_0            (~(limit == int_cnt) && div_en)
+  Row   2:          1  timer_en_1            (~(limit == int_cnt) && div_en)
+  Row   3:          5  div_en_0              (~(limit == int_cnt) && timer_en)
+  Row   4:          1  div_en_1              (~(limit == int_cnt) && timer_en)
+  Row   5:          1  (limit == int_cnt)_0  ~(timer_en ~& div_en)         
+  Row   6:          2  (limit == int_cnt)_1  ~(timer_en ~& div_en)         
+
+
+
+
+=================================================================================
+=== Instance: /test_bench
+=== Design Unit: work.test_bench
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        59        33        26    55.93%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../sim/run_test.v
+------------------------------------IF Branch------------------------------------
+    12                                         1     Count coming in to IF
+    12              1                          1                     $display("t = %0t: APB idle cycle with psel = 0", $time);
+    14              1                    ***0***                              $display("FAIL");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                         1     Count coming in to IF
+    13              1                    ***0***     		if(test_bench.dut.module1.wr_en !== 1'b0 || test_bench.dut.module1.wr_en !== 1'b0) begin
+    15              1                          1                     end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                         1     Count coming in to IF
+    15              1                          1                     end else begin
+    17              1                    ***0***                     end
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              1                    ***0***     endtask
+    22              1                          1     	reg [31:0] task_rdata;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              1                          1     		$display("========Test Case : check RW ============");
+    29              1                    ***0***     		$display("*****TISR****");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              1                    ***0***     		$display("*****TISR****");
+    31              1                          1                     test_bench.read (ADDR_TISR, task_rdata);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                         1     Count coming in to IF
+    35              1                          1                     test_bench.read (ADDR_TISR, task_rdata);
+    40              1                    ***0***                     test_bench.cmp_data(ADDR_TISR, task_rdata, 32'h0, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              1                    ***0***                     test_bench.read (ADDR_TISR, task_rdata);
+    45              1                          1     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                         1     Count coming in to IF
+    47              1                    ***0***                     test_bench.read (ADDR_TISR, task_rdata);
+    49              1                          1     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         1     Count coming in to IF
+    50              1                    ***0***     
+    52              1                          1                     test_bench.write_pstrb(ADDR_TCR, 32'h00, BIT_FULL_1);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         2     Count coming in to IF
+    53              1                          1                     test_bench.read (ADDR_TCR, task_rdata);
+    55              1                          1         
+    57              1                    ***0***                     test_bench.read (ADDR_TCR, task_rdata);
+Branch totals: 2 hits of 3 branches = 66.66%
+
+------------------------------------IF Branch------------------------------------
+    58                                         1     Count coming in to IF
+    58              1                    ***0***                     test_bench.cmp_data(ADDR_TCR, task_rdata, 32'h0, 32'hffff_ffff);
+    60              1                          1                     test_bench.write_pstrb(ADDR_TCR, 32'h5555_5555, BIT_FULL_1);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                         1     Count coming in to IF
+    65              1                    ***0***                     test_bench.read (ADDR_TCR, task_rdata);
+    67              1                          1     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                         1     Count coming in to IF
+    72              1                    ***0***     		test_bench.write_pstrb(ADDR_TCR, 32'h00, BIT_FULL_1);
+    74              1                          1                     test_bench.cmp_data(ADDR_TCR, task_rdata, 32'h0, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                         1     Count coming in to IF
+    79              1                    ***0***                     @(posedge test_bench.sys_clk);
+    81              1                          1                     $display("release reset");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                         1     Count coming in to IF
+    80              1                          1                     #1;
+    85              1                    ***0***     		$display("clear all to 0");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                         1     Count coming in to IF
+    87              1                          1                     test_bench.read (ADDR_TCR, task_rdata);
+    89              1                    ***0***         		$display("wrtie div_val = 8");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    94                                         1     Count coming in to IF
+    94              1                    ***0***                     test_bench.write_pstrb(ADDR_TCR, 32'h0000_0900, BIT_FULL_1);
+    96              1                          1                     test_bench.cmp_data(ADDR_TCR, task_rdata, 32'h0000_0800, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                         1     Count coming in to IF
+    96              1                          1                     test_bench.cmp_data(ADDR_TCR, task_rdata, 32'h0000_0800, 32'hffff_ffff);
+    101             1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    101                                        1     Count coming in to IF
+    101             1                    ***0***     
+    103             1                          1     		$display("*****TDR0*****");
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    108                                        1     Count coming in to IF
+    108             1                    ***0***     		test_bench.write_pstrb(ADDR_TDR0, 32'hffff_ffff, BIT_FULL_1);
+    110             1                          1                     test_bench.cmp_data(ADDR_TDR0, task_rdata, 32'hffff_ffff, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    114                                        1     Count coming in to IF
+    114             1                          1                     test_bench.cmp_data(ADDR_TDR0, task_rdata, 32'h5555_5555, 32'hffff_ffff);
+    119             1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    116                                        1     Count coming in to IF
+    116             1                          1     		test_bench.write_pstrb(ADDR_TDR0, 32'hAAAA_AAAA,BIT_FULL_1);
+    118             1                    ***0***                     test_bench.cmp_data(ADDR_TDR0, task_rdata, 32'hAAAA_AAAA, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    123                                        1     Count coming in to IF
+    123             1                    ***0***     
+    125             1                          1                     test_bench.write_pstrb(ADDR_TDR1, 32'h00,BIT_FULL_1);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    130                                        1     Count coming in to IF
+    130             1                    ***0***                     test_bench.read (ADDR_TDR1, task_rdata);
+    132             1                          1     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    137                                        1     Count coming in to IF
+    137             1                    ***0***                     test_bench.write_pstrb(ADDR_TDR1, 32'hAAAA_AAAA,BIT_FULL_1);
+    139             1                          1                     test_bench.cmp_data(ADDR_TDR1, task_rdata, 32'hAAAA_AAAA, 32'hffff_ffff);
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      33         4        29    12.12%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench --
+
+  File ../tb/test_bench.v
+
+
+----------------Focused Condition View-------------------
+Line       12 Item    1  ((task_rdata == 1281) && ~tim_pslverr)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (task_rdata == 1281)         N  '_0' not hit             Hit '_0'
+           tim_pslverr         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (task_rdata == 1281)_0  -                             
+  Row   2:          1  (task_rdata == 1281)_1  ~tim_pslverr                  
+  Row   3:          1  tim_pslverr_0           (task_rdata == 1281)          
+  Row   4:    ***0***  tim_pslverr_1           (task_rdata == 1281)          
+
+----------------Focused Condition View-------------------
+Line       13 Item    1  (wr_en !== 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (wr_en !== 1'b0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (wr_en !== 1'b0)_0    -                             
+  Row   2:    ***0***  (wr_en !== 1'b0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       15 Item    1  (task_rdata == 3)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (task_rdata == 3)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (task_rdata == 3)_0   -                             
+  Row   2:          1  (task_rdata == 3)_1   -                             
+
+----------------Focused Condition View-------------------
+Line       20 Item    1  ((task_rdata == 1281) && tim_pslverr)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (task_rdata == 1281)         N  No hits                  Hit '_0' and '_1'
+           tim_pslverr         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (task_rdata == 1281)_0  -                             
+  Row   2:    ***0***  (task_rdata == 1281)_1  tim_pslverr                   
+  Row   3:          1  tim_pslverr_0           (task_rdata == 1281)          
+  Row   4:    ***0***  tim_pslverr_1           (task_rdata == 1281)          
+
+
+----------------Focused Condition View-------------------
+Line       27 Item    1  ((task_rdata == 1281) && ~tim_pslverr)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (task_rdata == 1281)         N  '_0' not hit             Hit '_0'
+           tim_pslverr         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (task_rdata == 1281)_0  -                             
+  Row   2:          1  (task_rdata == 1281)_1  ~tim_pslverr                  
+  Row   3:          1  tim_pslverr_0           (task_rdata == 1281)          
+  Row   4:    ***0***  tim_pslverr_1           (task_rdata == 1281)          
+
+----------------Focused Condition View-------------------
+Line       29 Item    1  (task_rdata == 255)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (task_rdata == 255)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (task_rdata == 255)_0  -                             
+  Row   2:    ***0***  (task_rdata == 255)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       35 Item    1  (cnt0 !== cnt1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (cnt0 !== cnt1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt0 !== cnt1)_0     -                             
+  Row   2:          1  (cnt0 !== cnt1)_1     -                             
+
+
+----------------Focused Condition View-------------------
+Line       43 Item    1  (task_rdata == 16711680)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata == 16711680)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (task_rdata == 16711680)_0  -                             
+  Row   2:    ***0***  (task_rdata == 16711680)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       47 Item    1  (task_rdata[0] !== 1'b1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata[0] !== 1'b1)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (task_rdata[0] !== 1'b1)_0  -                             
+  Row   2:    ***0***  (task_rdata[0] !== 1'b1)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       50 Item    1  (task_rdata == -16777216)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (task_rdata == -16777216)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (task_rdata == -16777216)_0  -                             
+  Row   2:    ***0***  (task_rdata == -16777216)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       55 Item    1  (task_rdata[11:8] !== 3)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata[11:8] !== 3)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (task_rdata[11:8] !== 3)_0  -                             
+  Row   2:          1  (task_rdata[11:8] !== 3)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       58 Item    1  (task_rdata == 255)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (task_rdata == 255)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (task_rdata == 255)_0  -                             
+  Row   2:    ***0***  (task_rdata == 255)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       65 Item    1  (task_rdata == 65280)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage   Hint
+            -----------  --------  -----------------------  --------------
+  (task_rdata == 65280)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target               Non-masking condition(s)      
+ ---------  ---------  --------------------     -------------------------     
+  Row   1:          1  (task_rdata == 65280)_0  -                             
+  Row   2:    ***0***  (task_rdata == 65280)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       72 Item    1  (task_rdata == 16711680)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata == 16711680)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (task_rdata == 16711680)_0  -                             
+  Row   2:    ***0***  (task_rdata == 16711680)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       79 Item    1  (task_rdata == -16777216)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (task_rdata == -16777216)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (task_rdata == -16777216)_0  -                             
+  Row   2:    ***0***  (task_rdata == -16777216)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       80 Item    1  (cnt0 !== cnt1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (cnt0 !== cnt1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt0 !== cnt1)_0     -                             
+  Row   2:          1  (cnt0 !== cnt1)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       87 Item    1  (task_rdata == 255)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (task_rdata == 255)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:    ***0***  (task_rdata == 255)_0  -                             
+  Row   2:          1  (task_rdata == 255)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       94 Item    1  (task_rdata == 65280)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage   Hint
+            -----------  --------  -----------------------  --------------
+  (task_rdata == 65280)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target               Non-masking condition(s)      
+ ---------  ---------  --------------------     -------------------------     
+  Row   1:          1  (task_rdata == 65280)_0  -                             
+  Row   2:    ***0***  (task_rdata == 65280)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       96 Item    1  (cnt0 === cnt1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (cnt0 === cnt1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt0 === cnt1)_0     -                             
+  Row   2:          1  (cnt0 === cnt1)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       101 Item    1  (task_rdata == 16711680)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata == 16711680)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (task_rdata == 16711680)_0  -                             
+  Row   2:    ***0***  (task_rdata == 16711680)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       108 Item    1  (task_rdata == -16777216)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (task_rdata == -16777216)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (task_rdata == -16777216)_0  -                             
+  Row   2:    ***0***  (task_rdata == -16777216)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       114 Item    1  (cnt0 !== cnt1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (cnt0 !== cnt1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cnt0 !== cnt1)_0     -                             
+  Row   2:          1  (cnt0 !== cnt1)_1     -                             
+
+----------------Focused Condition View-------------------
+Line       116 Item    1  (task_rdata == 255)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+  (task_rdata == 255)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:    ***0***  (task_rdata == 255)_0  -                             
+  Row   2:          1  (task_rdata == 255)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       123 Item    1  (task_rdata == 65280)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage   Hint
+            -----------  --------  -----------------------  --------------
+  (task_rdata == 65280)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target               Non-masking condition(s)      
+ ---------  ---------  --------------------     -------------------------     
+  Row   1:          1  (task_rdata == 65280)_0  -                             
+  Row   2:    ***0***  (task_rdata == 65280)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       130 Item    1  (task_rdata == 16711680)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (task_rdata == 16711680)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:          1  (task_rdata == 16711680)_0  -                             
+  Row   2:    ***0***  (task_rdata == 16711680)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       137 Item    1  (task_rdata == -16777216)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (task_rdata == -16777216)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (task_rdata == -16777216)_0  -                             
+  Row   2:    ***0***  (task_rdata == -16777216)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     302       297         5    98.34%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../sim/run_test.v
+    14              1                              $display("FAIL");
+    59              1         
+    102             1     
+    119             1     
+    123             1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        218       162        56    74.31%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                           sys_clk           9           9      100.00 
+                                         sys_rst_n           3           9      100.00 
+                                      tim_dbg_mode           1           1      100.00 
+                                           tim_int           2           2      100.00 
+                                    tim_paddr[0-1]           0           0        0.00 
+                                      tim_paddr[2]           6           8      100.00 
+                                      tim_paddr[3]           7           8      100.00 
+                                      tim_paddr[4]           5           7      100.00 
+                                   tim_paddr[5-11]           0           0        0.00 
+                                     tim_paddr[12]           0           9       50.00 
+                                  tim_paddr[13-29]           0           0        0.00 
+                                     tim_paddr[30]           0           9       50.00 
+                                     tim_paddr[31]           0           0        0.00 
+                                       tim_penable           9           9      100.00 
+                                     tim_prdata[0]           7           7      100.00 
+                                     tim_prdata[1]           6           6      100.00 
+                                     tim_prdata[2]           5           5      100.00 
+                                   tim_prdata[3-6]           4           4      100.00 
+                                     tim_prdata[7]           3           3      100.00 
+                                     tim_prdata[8]           6           6      100.00 
+                                     tim_prdata[9]           4           4      100.00 
+                                    tim_prdata[10]           5           5      100.00 
+                                    tim_prdata[11]           4           4      100.00 
+                                 tim_prdata[12-31]           3           3      100.00 
+                                        tim_pready           9           9      100.00 
+                                          tim_psel           9           9      100.00 
+                                       tim_pslverr           3           3      100.00 
+                                    tim_pstrb[0-3]           8           8      100.00 
+                                     tim_pwdata[0]           6           8      100.00 
+                                     tim_pwdata[1]           5           5      100.00 
+                                     tim_pwdata[2]           2           3      100.00 
+                                     tim_pwdata[3]           3           4      100.00 
+                                   tim_pwdata[4-7]           2           3      100.00 
+                                     tim_pwdata[8]           3           5      100.00 
+                                     tim_pwdata[9]           4           5      100.00 
+                                    tim_pwdata[10]           3           5      100.00 
+                                    tim_pwdata[11]           4           5      100.00 
+                                 tim_pwdata[12-15]           2           3      100.00 
+                                 tim_pwdata[16-31]           1           3      100.00 
+                                        tim_pwrite           8           8      100.00 
+
+Total Node Count     =        109 
+Toggled Node Count   =         80 
+Untoggled Node Count =         29 
+
+Toggle Coverage      =      74.31% (162 of 218 bins)
+
+
+Total Coverage By Instance (filtered view): 74.20%
+
