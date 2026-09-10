@@ -23,6 +23,6 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 assign pwm_cnt = pwm_cnt_r;
-assign pwm_period_match = (pwm_cnt == period) ? 1 : 0;
+assign pwm_period_match = (pwm_cnt == period) & pwm_tick;
 	
 endmodule

@@ -28,6 +28,10 @@ wire timer_en_neg;
 wire div_mode;
 wire pwm_en;
 wire [15:0] prescaler;
+wire pwm_tick;
+wire [31:0] period;
+wire [31:0] pwm_cnt;
+wire pwm_period_match;
 
 	apb_slave module1(
 			  .clk        (sys_clk    ),
@@ -75,7 +79,9 @@ wire [15:0] prescaler;
 			  .debug_mode (dbg_mode   ),
 			  .cnt_en     (count_en   ),
 			  .div_mode   (div_mode   ),
-			  .prescaler  (prescaler  )
+			  .prescaler  (prescaler  ),
+			  .pwm_en     (pwm_en     ),
+			  .pwm_tick   (pwm_tick   )
 	);
 
 	counter module4(
@@ -89,4 +95,14 @@ wire [15:0] prescaler;
 			  .tdr1_wr_sel(tdr1_wr_sel),
 			  .cnt        (count      )
 	);
+
+	pwm_counter module5(
+			  .clk        (sys_clk    ),
+			  .rsn_n      (sys_rst_n  ),
+			  .pwm_tick   (pwm_tick   ),
+			  .period     (period     ),
+			  .pwm_cnt    (pwm_cnt    ),
+			  .pwm_period (pwm_period )
+	);
+
 endmodule

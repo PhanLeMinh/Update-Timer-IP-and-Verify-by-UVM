@@ -42,8 +42,8 @@ begin
 	endcase	
 end
 
-assign int_cnt_nxt = halt_req ? int_cnt :
-	                        cnt_rst ? 16'b0 : int_cnt + 1'b1;
+assign int_cnt_nxt = (halt_req & !pwm_en) ? int_cnt :
+	                        cnt_rst   ? 16'b0 : int_cnt + 1'b1;
 always @(posedge clk or negedge rst_n)
 begin
 	if(!rst_n) begin
@@ -53,6 +53,6 @@ begin
 		int_cnt <= int_cnt_nxt;
 	end
 end
-assign cnt_en = (default_mode || control_mode) & !halt_req ;
+assign cnt_en = (default_mode || control_mode) & !halt_req & !pwm_en;
 assign pwm_tick = (default_mode || control_mode) & pwm_en;
 endmodule
