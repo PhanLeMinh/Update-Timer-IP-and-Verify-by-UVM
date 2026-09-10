@@ -2,7 +2,6 @@ module pwm_counter(
 		   input clk,
 		   input rst_n,
 		   input pwm_tick, //from counter control
-		   input pwm_en, //from register
 		   input [31:0] period, //from TCMP0 register
 		   output [31:0] pwm_cnt,
 		   output pwm_period_match
@@ -24,6 +23,6 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 assign pwm_cnt = pwm_cnt_r;
-assign pwm_period_match = (pwm_cnt == period);
+assign pwm_period_match = (pwm_cnt == period) ? 1 : 0;
 	
 endmodule

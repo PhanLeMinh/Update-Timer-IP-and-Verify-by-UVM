@@ -7,8 +7,10 @@ module counter_control(
 	input       timer_en,
 	input       debug_mode,
 	input       div_mode, // from register
+	input       pwm_en, // from register
 	input[15:0] prescaler,
-	output      cnt_en
+	output      cnt_en,
+	output      pwm_tick
 );
 // Khai bao
 wire default_mode; 
@@ -52,5 +54,5 @@ begin
 	end
 end
 assign cnt_en = (default_mode || control_mode) & !halt_req ;
-
+assign pwm_tick = (default_mode || control_mode) & pwm_en;
 endmodule
