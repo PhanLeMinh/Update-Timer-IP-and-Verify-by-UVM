@@ -22,7 +22,7 @@ wire [15:0] active_limit;
 assign active_limit = div_mode ? prescaler : limit_pow2;
 
 assign default_mode = !div_en & timer_en;
-assign control_mode = div_en & timer_en & (div_val != 0) & (int_cnt == active_limit);
+assign control_mode = div_en & timer_en & (int_cnt == active_limit);
 assign cnt_rst = !timer_en || !div_en || (int_cnt == active_limit); 
 
 always @(*)

@@ -1,7 +1,7 @@
 module counter(
 	input clk,
 	input rst_n,
-	input cnt_en,
+	input cnt_en, //from counter control
 	input [3:0] pstrb,
 	input [31:0] wdata, //from register
 	input tdr0_wr_sel, //from register
@@ -16,6 +16,7 @@ wire [31:0] cnt1_tmp;
 wire [63:0] cnt_plus_1;
 reg [31:0] cnt0;
 reg [31:0] cnt1;
+
 
 // counter 31-0
 assign cnt0_tmp[7:  0] = pstrb[0] & tdr0_wr_sel ? wdata[7:0] : timer_en_neg ? 8'h0 : 
