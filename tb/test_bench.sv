@@ -14,6 +14,8 @@ wire [31:0] tim_prdata;
 wire tim_pslverr;
 wire tim_int;
 wire tim_pready;
+wire pwm_out;
+wire pwm_int;
 
 parameter   ADDR_TCR    =   12'h0;
 parameter   ADDR_TDR0   =   12'h4;
@@ -37,7 +39,9 @@ timer_top dut(
         .tim_pready   (tim_pready ),
         .tim_prdata   (tim_prdata ),
         .tim_pslverr  (tim_pslverr),
-        .tim_int      (tim_int    )
+        .tim_int      (tim_int    ),
+	.pwm_out      (pwm_out    ),
+	.pwm_int      (pwm_int    )
 
 );
 
@@ -97,13 +101,16 @@ initial begin
         tim_pwdata = 32'h0;
         tim_pstrb = 4'b0;
         tim_dbg_mode = 0;
+	rdata = 0;
 	wait(sys_rst_n == 1);
 	$display("---Start Write---");
-	apb_write(ADDR_TCR, 32'h0004_0007);
-	repeat(200) @(posedge sys_clk);
+	apb_write(ADDR_TCR, 32'h0000_0009);
+	apb_write(ADDR_TCMP0, 32'd10);
+	apb_write(ADDR_TCMP1, 32'd4);
+	repeat(100) @(posedge sys_clk);
 	$display("---Capture Data---");
 	apb_read(ADDR_TDR0, rdata);
-	$display("TDR0; 32'd%0d", rdata);
+	$display("PWM Mode, pwm_cnt = 32'd%0d", rdata);
         $finish;
 end
 

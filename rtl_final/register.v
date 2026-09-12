@@ -6,7 +6,9 @@ module register(
 	input wr_en,
 	input rd_en,
 	input [3:0] pstrb,
-	input [63:0] cnt,
+	input [63:0] cnt, //from counter
+	input [31:0] tdr0_pwm_cnt, //from pwm_counter
+	input pwm_period_match, // from pwm_counter
 	input debug_mode,
 	output tim_int,
 	output reg div_en,
@@ -21,7 +23,9 @@ module register(
 	
 	output reg div_mode,
 	output reg pwm_en,
-	output reg [15:0] prescaler
+	output reg [15:0] prescaler,
+	output [31:0] tcmp0_period,
+	output [31:0] tcmp1_duty
 );
 
 parameter ADDR_TCR   = 12'h00; 
@@ -162,11 +166,12 @@ begin
 end
 
 
-assign tdr0_wr_sel = wr_en & reg_sel[1]; 
+assign tdr0_wr_sel = wr_en & reg_sel[1] & !pwm_en; 
 assign tdr1_wr_sel = wr_en & reg_sel[2];
 
 // TCMP0
 // reg_sel[3]
+
 assign tcmp0_tmp[7:  0] = (pstrb[0] & wr_en & reg_sel[3]) ? wdata[7:0] : tcmp0_r[7:0];
 assign tcmp0_tmp[15: 8] = (pstrb[1] & wr_en & reg_sel[3]) ? wdata[15:8] : tcmp0_r[15:8];
 assign tcmp0_tmp[23:16] = (pstrb[2] & wr_en & reg_sel[3]) ? wdata[23:16] : tcmp0_r[23:16];
@@ -200,6 +205,10 @@ end
 // Compare value with counter
 wire [63:0] compare_val; 
 assign compare_val = {tcmp1_r, tcmp0_r};
+
+// Compare value with pwm_counter
+assign tcmp0_period = tcmp0_r;
+assign tcmp1_duty = tcmp1_r;
 
 // TIER
 // reg_sel[5]
@@ -274,7 +283,7 @@ begin
 	begin
 		case(addr)
                		 ADDR_TCR  :    rdata_r = {prescaler, 4'h0, div_val[3:0], 4'h0, pwm_en, div_mode, div_en, timer_en};
-               		 ADDR_TDR0 :    rdata_r = cnt[31:0];
+               		 ADDR_TDR0 :    rdata_r = pwm_en ? tdr0_pwm_cnt :cnt[31:0];
                		 ADDR_TDR1 :    rdata_r = cnt[63:32];
                		 ADDR_TCMP0:    rdata_r = tcmp0_r;
                		 ADDR_TCMP1:    rdata_r = tcmp1_r;
