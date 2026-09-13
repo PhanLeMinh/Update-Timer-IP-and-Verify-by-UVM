@@ -25,7 +25,8 @@ module register(
 	output reg pwm_en,
 	output reg [15:0] prescaler,
 	output [31:0] tcmp0_period,
-	output [31:0] tcmp1_duty
+	output [31:0] tcmp1_duty,
+	output pwm_int
 );
 
 parameter ADDR_TCR   = 12'h00; 
@@ -83,7 +84,8 @@ wire int_st;
 wire [31:0] tisr_tmp;
 wire int_clr;
 wire int_set;
-wire pwm_int_st; // new
+wire pwm_int_st; 
+wire pwm_int_set;
 
 // THCSR
 reg  [31:0] thcsr_r;
@@ -213,7 +215,7 @@ assign tcmp1_duty = tcmp1_r;
 // TIER
 // reg_sel[5]
 // Bit[0] int_en 
-assign int_en = (pstrb[0] & wr_en & reg_sel[5]) ? wdata[0] : tier_r[0];  
+assign int_en = (pwm_en | (pstrb[0] & wr_en & reg_sel[5])) ? wdata[0] : tier_r[0];  
 assign tier_tmp = {31'h0, int_en};
 always @(posedge clk or negedge rst_n)
 begin
@@ -231,32 +233,44 @@ end
 // Bit[1] pwm_int_st - flag interrupt of PWM
 assign int_set = (cnt == compare_val);
 assign int_clr = pstrb[0] & wr_en & wdata[0]  & reg_sel[6] ;
+assign int_st  = tisr_r[0]; 
+assign pwm_int_set = (tdr0_pwm_cnt == tcmp0_period);
+assign pwm_int_st = tisr_r[1];
 
-//assign int_st  = int_clr ? 1'b0 :
-	         //int_set ? 1'b1 : tisr_r[0];
-assign int_st = tisr_r[0];
-//assign tisr_tmp = {31'h0, int_st};
+
 always @(posedge clk or negedge rst_n)
 begin
 	if(!rst_n) begin
 		tisr_r <= TISR_DEFAULT;
-	end else if(int_clr) begin
-		tisr_r[0] <= 1'b0;
-		//tisr_r <= {31'h0, int_st};
-	end else if(int_set) begin
-		tisr_r[0] <= 1'b1;
 	end
-	else begin
-		tisr_r[0] <= tisr_r[0];
+	if(pwm_en) begin
+		if(int_clr) begin
+			tisr_r[1] <= 1'b0;
+		end
+		else if(pwm_int_set) begin
+			tisr_r[1] <= 1'b1;
+		end
+		else begin
+			tisr_r[1] <= tisr_r[1];
+		end
+	end 
+	else begin	
+		if(int_clr) begin
+                	tisr_r[0] <= 1'b0;
+        	end else if(int_set) begin
+                	tisr_r[0] <= 1'b1;
+        	end
+        	else begin
+                	tisr_r[0] <= tisr_r[0];
 	end
-
 end
 
 // Interrupt
 // int_st xay ra khi cnt 64 bit == tcmp 64 bit 
 // int_en = 1 moi xuat ra output
 assign tim_int = int_st & int_en;
-
+// pwm_st xay ra khi pwm_cnt == tcmp0_period & int_en = 1
+assign pwm_int = pwm_int_st & int_en;
 
 // THCSR
 // halt_ack bit 1 RO

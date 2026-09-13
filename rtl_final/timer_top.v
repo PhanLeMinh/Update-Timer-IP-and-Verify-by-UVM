@@ -12,8 +12,7 @@ module timer_top(
 	output [31:0] tim_prdata,
 	output        tim_pslverr,
 	output        tim_int,
-	output 	      pwm_out, //pwm mode
-	output        pwm_int  //pwm mode
+	output 	      pwm_out //pwm mode
 );
 wire write_en;
 wire read_en ;
@@ -107,6 +106,7 @@ wire pwm_period_match;
 			  .clk        (sys_clk    ),
 			  .rst_n      (sys_rst_n  ),
 			  .pwm_tick   (pwm_tick   ),
+			  .pwm_en     (pwm_en     ),
 			  .tcmp0_period (tcmp0_period),
 			  .tcmp1_duty (tcmp1_duty ),
 			  .tdr0_pwm_cnt (tdr0_pwm_cnt    ),
