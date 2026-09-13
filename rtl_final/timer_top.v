@@ -12,7 +12,8 @@ module timer_top(
 	output [31:0] tim_prdata,
 	output        tim_pslverr,
 	output        tim_int,
-	output 	      pwm_out //pwm mode
+	output 	      pwm_out,
+	output 	      pwm_int
 );
 wire write_en;
 wire read_en ;
@@ -33,7 +34,6 @@ wire pwm_tick;
 wire [31:0] tcmp0_period;
 wire [31:0] tcmp1_duty;
 wire [31:0] tdr0_pwm_cnt;
-wire pwm_period_match;
 
 	apb_slave module1(
 			  .clk        (sys_clk    ),
@@ -55,8 +55,9 @@ wire pwm_period_match;
 			  .rd_en      (read_en    ),
 			  .pstrb      (tim_pstrb  ),
 			  .cnt        (count      ),
-			  .debug_mode (dbg_mode),
+			  .debug_mode (dbg_mode   ),
 			  .tim_int    (tim_int    ),
+			  .pwm_int    (pwm_int    ),
 			  .div_en     (div_en     ),
 			  .div_val    (div_val    ),
 			  .halt_req_out   (halt_req   ),

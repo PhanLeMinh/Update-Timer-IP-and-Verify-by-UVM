@@ -10,7 +10,8 @@ module register(
 	input [31:0] tdr0_pwm_cnt, //from pwm_counter
 	input pwm_period_match, // from pwm_counter
 	input debug_mode,
-	output tim_int,
+	input pwm_int,
+	input tim_int,
 	output reg div_en,
 	output reg [3:0] div_val,
 	output halt_req_out,
@@ -25,8 +26,7 @@ module register(
 	output reg pwm_en,
 	output reg [15:0] prescaler,
 	output [31:0] tcmp0_period,
-	output [31:0] tcmp1_duty,
-	output pwm_int
+	output [31:0] tcmp1_duty
 );
 
 parameter ADDR_TCR   = 12'h00; 
@@ -262,6 +262,7 @@ begin
         	end
         	else begin
                 	tisr_r[0] <= tisr_r[0];
+		end
 	end
 end
 
