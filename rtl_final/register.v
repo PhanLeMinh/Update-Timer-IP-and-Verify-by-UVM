@@ -10,8 +10,8 @@ module register(
 	input [31:0] tdr0_pwm_cnt, //from pwm_counter
 	input pwm_period_match, // from pwm_counter
 	input debug_mode,
-	input pwm_int,
-	input tim_int,
+	output pwm_int,
+	output tim_int,
 	output reg div_en,
 	output reg [3:0] div_val,
 	output halt_req_out,
@@ -85,7 +85,6 @@ wire [31:0] tisr_tmp;
 wire int_clr;
 wire int_set;
 wire pwm_int_st; 
-wire pwm_int_set;
 
 // THCSR
 reg  [31:0] thcsr_r;
@@ -232,9 +231,9 @@ end
 // Bit[0] int_st
 // Bit[1] pwm_int_st - flag interrupt of PWM
 assign int_set = (cnt == compare_val);
-assign int_clr = pstrb[0] & wr_en & wdata[0]  & reg_sel[6] ;
+assign int_clr = pstrb[0] & wr_en & wdata[0] & reg_sel[6];
+assign pwm_clr = pstrb[0] & wr_en & wdata[1] & reg_sel[6]; 
 assign int_st  = tisr_r[0]; 
-assign pwm_int_set = (tdr0_pwm_cnt == tcmp0_period);
 assign pwm_int_st = tisr_r[1];
 
 
@@ -247,7 +246,7 @@ begin
 		if(int_clr) begin
 			tisr_r[1] <= 1'b0;
 		end
-		else if(pwm_int_set) begin
+		else if(pwm_period_match) begin
 			tisr_r[1] <= 1'b1;
 		end
 		else begin
