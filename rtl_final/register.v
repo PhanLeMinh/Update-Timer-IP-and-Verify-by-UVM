@@ -214,7 +214,7 @@ assign tcmp1_duty = tcmp1_r;
 // TIER
 // reg_sel[5]
 // Bit[0] int_en 
-assign int_en = (pwm_en | (pstrb[0] & wr_en & reg_sel[5])) ? wdata[0] : tier_r[0];  
+assign int_en = (pstrb[0] & wr_en & reg_sel[5])) ? wdata[0] : tier_r[0];  
 assign tier_tmp = {31'h0, int_en};
 always @(posedge clk or negedge rst_n)
 begin
@@ -243,7 +243,7 @@ begin
 		tisr_r <= TISR_DEFAULT;
 	end
 	if(pwm_en) begin
-		if(int_clr) begin
+		if(pwm_clr) begin
 			tisr_r[1] <= 1'b0;
 		end
 		else if(pwm_period_match) begin
