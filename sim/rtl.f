@@ -1,6 +1,6 @@
-../rtl_final/register.v
-../rtl_final/counter_control.v
-../rtl_final/counter.v
-../rtl_final/apb_slave.v
-../rtl_final/pwm_counter.v
-../rtl_final/timer_top.v
+../rtl/register.v
+../rtl/counter_control.v
+../rtl/counter.v
+../rtl/apb_slave.v
+../rtl/pwm_counter.v
+../rtl/timer_top.v

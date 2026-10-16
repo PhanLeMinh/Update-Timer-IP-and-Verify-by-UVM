@@ -1,5 +1,5 @@
 QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-Start time: 12:43:27 on Sep 16,2026
+Start time: 20:16:26 on Oct 16,2026
 vlog -f compile.f 
 -- Compiling module register
 -- Compiling module counter_control
@@ -7,9 +7,45 @@ vlog -f compile.f
 -- Compiling module apb_slave
 -- Compiling module pwm_counter
 -- Compiling module timer_top
+-- Compiling package apb_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) ./../vip/apb_pkg.sv(4): Using implicit +incdir+/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling interface apb_if
+-- Compiling package apb_register_pkg
+-- Compiling package timer_regmodel_pkg
+** Error: ../regmodel/timer_regmodel_pkg.sv(3): (vlog-13006) Could not find the package (timer_register_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+-- Importing package apb_pkg
+** Error: ** while parsing file included at ../regmodel/timer_regmodel_pkg.sv(8)
+** at ./../regmodel/timer_reg_block.sv(4): (vlog-2294) The 'var' keyword is missing.
+** Error: (vlog-13069) ** while parsing file included at ../regmodel/timer_regmodel_pkg.sv(8)
+** at ./../regmodel/timer_reg_block.sv(4): near "TCR": syntax error, unexpected IDENTIFIER, expecting ';' or ','.
+-- Compiling package env_pkg
+** Error: ../tb/env_pkg.sv(4): (vlog-13006) Could not find the package (timer_regmodel_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(10): Invalid type 'timer_reg_block'. Please check the type of the variable 'reg_model'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(11): Invalid type 'timer_reg2apb_adapter'. Please check the type of the variable 'apb_adapter'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(32): (vlog-2730) Undefined variable: 'reg_model'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(32): (vlog-2164) Class or package 'timer_reg_block' not found.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(32): (vlog-2730) Undefined variable: 'timer_reg_block'.
+** Error: (vlog-13069) ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(32): near "::": syntax error, unexpected ::, expecting ';'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(35): (vlog-2730) Undefined variable: 'apb_adapter'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(35): (vlog-2164) Class or package 'timer_reg2apb_adapter' not found.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(35): (vlog-2730) Undefined variable: 'timer_reg2apb_adapter'.
+** Error: (vlog-13069) ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(35): near "::": syntax error, unexpected ::, expecting ';'.
+** Error: ** while parsing file included at ../tb/env_pkg.sv(8)
+** at ./../tb/timer_environment.sv(50): (vlog-2730) Undefined variable: 'apb_adapter'.
+-- Compiling package seq_pkg
+-- Compiling package test_pkg
+** Error: ../testcases/test_pkg.sv(3): (vlog-13006) Could not find the package (env_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
 -- Compiling module test_bench
-
-Top level modules:
-	test_bench
-End time: 12:43:27 on Sep 16,2026, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
+End time: 20:16:27 on Oct 16,2026, Elapsed time: 0:00:01
+Errors: 16, Warnings: 0

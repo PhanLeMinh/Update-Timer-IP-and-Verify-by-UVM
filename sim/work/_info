@@ -1,191 +1,318 @@
 m255
 K4
 z2
-!s12c _opt
-Z0 !s99 nomlopt
-!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 d/home/minhphan/project/timer_ip_v2/sim
-T_opt
-!s110 1789294343
-VDhQ`Pza9^E52cXb8W;nPO1
-04 10 4 work test_bench fast 0
-=1-709cd1130f51-6aa67707-8e42a-10ad8
+Z0 d/home/minhphan/project/timer_ip_v2/sim
+Yapb_if
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1792156587
+!i10b 1
+!s100 CEWBn`EPn09n6I9LBGJP`1
+IWhnIIS>VA^oQHBVYmZN7a2
+S1
 R0
-!s12f OEM100
-!s12b OEM100
-!s124 OEM100
-!s135 nogc
-o-quiet -auto_acc_if_foreign -work work -G MEALY_FSM=0 -debugdb +acc
-Z2 tCvgOpt 0
-n@_opt
-OL;O;2024.2;79
-R1
-vapb_slave
-Z3 2../rtl_final/register.v|../rtl_final/counter_control.v|../rtl_final/counter.v|../rtl_final/apb_slave.v|../rtl_final/pwm_counter.v|../rtl_final/timer_top.v|../tb/test_bench.sv
-Z4 !s110 1789537407
-!i10b 1
-!s100 ki]Q3<eQWZESI][eXdMH62
-I=h9WKPb@c?4dUj94>Z8883
-R1
-w1787039759
-8../rtl_final/apb_slave.v
-F../rtl_final/apb_slave.v
-!i122 3
-L0 1 46
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 OL;L;2024.2;79
+w1792153207
+8./../vip/apb_interface.sv
+F./../vip/apb_interface.sv
+!i122 0
+Z3 L0 1 0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z7 !s108 1789537407.000000
-!s107 ../tb/test_bench.sv|../rtl_final/timer_top.v|../rtl_final/pwm_counter.v|../rtl_final/apb_slave.v|../rtl_final/counter.v|../rtl_final/counter_control.v|../rtl_final/register.v|
-Z8 !s90 -f|compile.f|
+Z6 !s108 1792156586.000000
+!s107 ./../tb/timer_environment.sv|./../tb/timer_scoreboard.sv|./../regmodel/timer_reg_block.sv|./../regmodel/timer_reg2apb_adapter.sv|./../regmodel/register/timer_THCSR_reg.sv|./../regmodel/register/timer_TISR_reg.sv|./../regmodel/register/timer_TIER_reg.sv|./../regmodel/register/timer_TCMP1_reg.sv|./../regmodel/register/timer_TCMP0_reg.sv|./../regmodel/register/timer_TDR1_reg.sv|./../regmodel/register/timer_TDR0_reg.sv|./../regmodel/register/timer_TCR_reg.sv|./../vip//apb_agent.sv|./../vip//apb_sequencer.sv|./../vip//apb_monitor.sv|./../vip//apb_driver.sv|./../vip//apb_transaction.sv|./../vip//apb_configuration.sv|./../vip//apb_define.sv|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/test_bench.sv|../testcases/test_pkg.sv|../sequences/seq_pkg.sv|../tb/env_pkg.sv|../regmodel/timer_regmodel_pkg.sv|../regmodel/register/timer_register_pkg.sv|./../vip/apb_interface.sv|./../vip/apb_pkg.sv|../rtl/timer_top.v|../rtl/pwm_counter.v|../rtl/apb_slave.v|../rtl/counter.v|../rtl/counter_control.v|../rtl/register.v|
+Z7 !s90 -f|compile.f|
 !i113 0
-Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-vcounter
-R3
-R4
-!i10b 1
-!s100 nT4?71IG=W?FKdD@^GF9[1
-IRXS7kFD6iN_TiF62Gj^KQ1
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 +incdir+./../regmodel +incdir+./../regmodel/register +incdir+./../sequences +incdir+./../testcases +incdir+./../tb +define+APB_ADDR_WIDTH=12 +define+APB_DATA_WIDTH=32 +incdir+./../vip/ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+Xapb_pkg
+!s115 apb_if
 R1
-w1789025180
-8../rtl_final/counter.v
-F../rtl_final/counter.v
-!i122 3
-L0 1 65
+Z11 DXx6 mtiUvm 7 uvm_pkg 0 22 MiVhEBb9cnBN5^J=<XBKI2
+R2
+!i10b 1
+!s100 bL1Z8E`C2Ag5i<<_z`LB01
+IkCgb59NRiIHcMk8Zf]^fg2
+S1
+R0
+w1792154162
+8./../vip/apb_pkg.sv
+F./../vip/apb_pkg.sv
+Z12 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z13 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z14 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z15 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z16 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z17 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z18 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z19 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z20 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z21 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z22 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z23 F/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+F./../vip//apb_define.sv
+F./../vip//apb_configuration.sv
+F./../vip//apb_transaction.sv
+F./../vip//apb_driver.sv
+F./../vip//apb_monitor.sv
+F./../vip//apb_sequencer.sv
+F./../vip//apb_agent.sv
+!i122 0
+R3
+VkCgb59NRiIHcMk8Zf]^fg2
 R5
-R6
 r1
 !s85 0
 31
+R6
+Z24 !s107 ./../tb/timer_environment.sv|./../tb/timer_scoreboard.sv|./../regmodel/timer_reg_block.sv|./../regmodel/timer_reg2apb_adapter.sv|./../regmodel/register/timer_THCSR_reg.sv|./../regmodel/register/timer_TISR_reg.sv|./../regmodel/register/timer_TIER_reg.sv|./../regmodel/register/timer_TCMP1_reg.sv|./../regmodel/register/timer_TCMP0_reg.sv|./../regmodel/register/timer_TDR1_reg.sv|./../regmodel/register/timer_TDR0_reg.sv|./../regmodel/register/timer_TCR_reg.sv|./../vip//apb_agent.sv|./../vip//apb_sequencer.sv|./../vip//apb_monitor.sv|./../vip//apb_driver.sv|./../vip//apb_transaction.sv|./../vip//apb_configuration.sv|./../vip//apb_define.sv|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/home/minhphan/SIEMENS_EDA/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/test_bench.sv|../testcases/test_pkg.sv|../sequences/seq_pkg.sv|../tb/env_pkg.sv|../regmodel/timer_regmodel_pkg.sv|../regmodel/register/timer_register_pkg.sv|./../vip/apb_interface.sv|./../vip/apb_pkg.sv|../rtl/timer_top.v|../rtl/pwm_counter.v|../rtl/apb_slave.v|../rtl/counter.v|../rtl/counter_control.v|../rtl/register.v|
 R7
-Z10 !s107 ../tb/test_bench.sv|../rtl_final/timer_top.v|../rtl_final/pwm_counter.v|../rtl_final/apb_slave.v|../rtl_final/counter.v|../rtl_final/counter_control.v|../rtl_final/register.v|
-R8
 !i113 0
+R8
 R9
+R10
+Xapb_register_pkg
+R1
+R11
 R2
-vcounter_control
+!i10b 1
+!s100 bLf^i<];JW^hf<UJK5oFO3
+Iz;MhLiHn2TJZ8AaeF^:[J3
+S1
+R0
+w1792156117
+8../regmodel/register/timer_register_pkg.sv
+F../regmodel/register/timer_register_pkg.sv
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+F./../regmodel/register/timer_TCR_reg.sv
+F./../regmodel/register/timer_TDR0_reg.sv
+F./../regmodel/register/timer_TDR1_reg.sv
+F./../regmodel/register/timer_TCMP0_reg.sv
+F./../regmodel/register/timer_TCMP1_reg.sv
+F./../regmodel/register/timer_TIER_reg.sv
+F./../regmodel/register/timer_TISR_reg.sv
+F./../regmodel/register/timer_THCSR_reg.sv
+!i122 0
 R3
+Vz;MhLiHn2TJZ8AaeF^:[J3
+R5
+r1
+!s85 0
+31
+R6
+R24
+R7
+!i113 0
+R8
+R9
+R10
+vapb_slave
+Z25 !s110 1792156586
+!i10b 1
+!s100 Y<Rkli@[ak_RF8DbJc09m3
+I<iC7BB@b;lcbH48QJZSg:0
+R0
+Z26 w1791737795
+8../rtl/apb_slave.v
+F../rtl/apb_slave.v
+!i122 0
+L0 1 37
 R4
+R5
+r1
+!s85 0
+31
+R6
+R24
+R7
+!i113 0
+R8
+R9
+R10
+vcounter
+R25
+!i10b 1
+!s100 A11Q`5TA^Df?MI`f8893Y2
+I<kk?F>h[Kf:]57jJNhaRi3
+R0
+R26
+8../rtl/counter.v
+F../rtl/counter.v
+!i122 0
+L0 1 64
+R4
+R5
+r1
+!s85 0
+31
+R6
+R24
+R7
+!i113 0
+R8
+R9
+R10
+vcounter_control
+R25
 !i10b 1
 !s100 jzGYN6>@No>_iS?;]Yhh<0
-ISR=TeUj1jJlHFzJGM[Plz1
-R1
-w1789053902
-8../rtl_final/counter_control.v
-F../rtl_final/counter_control.v
-!i122 3
+IW=KU<A^3_;J?Xf0b<K2E32
+R0
+R26
+8../rtl/counter_control.v
+F../rtl/counter_control.v
+!i122 0
 L0 1 58
+R4
 R5
-R6
 r1
 !s85 0
 31
+R6
+R24
 R7
-R10
-R8
 !i113 0
+R8
 R9
-R2
+R10
 vpwm_counter
-R3
-R4
+R25
 !i10b 1
 !s100 DKZl3d=N`@lQj3]a9NzG72
-InfLE42hR]kN4>C;]FU0HR1
-R1
-w1789230473
-8../rtl_final/pwm_counter.v
-F../rtl_final/pwm_counter.v
-!i122 3
+IE6K;me<?>8lWha4H=FZ:E1
+R0
+R26
+8../rtl/pwm_counter.v
+F../rtl/pwm_counter.v
+!i122 0
 L0 1 32
+R4
 R5
-R6
 r1
 !s85 0
 31
+R6
+R24
 R7
-R10
-R8
 !i113 0
+R8
 R9
-R2
+R10
 vregister
-R3
-R4
+R25
 !i10b 1
-!s100 QHjGO8Q]Yb1dBYNaoGZeo3
-IYc1O>?JI3Q>65CUPnZ5`o0
-R1
-w1789537035
-8../rtl_final/register.v
-F../rtl_final/register.v
-!i122 3
+!s100 Qm]iN058;Ub@10=o2JW3C3
+Iz<7Hm8B0f1Yj^VC8o<YAE0
+R0
+R26
+8../rtl/register.v
+F../rtl/register.v
+!i122 0
 L0 1 318
+R4
 R5
-R6
 r1
 !s85 0
 31
+R6
+R24
 R7
-R10
-R8
 !i113 0
+R8
 R9
-R2
-vtest_bench
-R3
-DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R4
-!i10b 1
-!s100 nBW`k8NLPZHWeU8BL9YJe1
-Ieh_J=B:QMPA<hE<>hBza:0
-S1
+R10
+Xseq_pkg
 R1
-w1789229142
+R11
+R2
+!i10b 1
+!s100 8g;08AdamK?dIXYAB;?gm1
+I>fAYbXZ9a;=XjYB7Q<_^Z3
+S1
+R0
+w1792150925
+8../sequences/seq_pkg.sv
+F../sequences/seq_pkg.sv
+!i122 0
+R3
+V>fAYbXZ9a;=XjYB7Q<_^Z3
+R5
+r1
+!s85 0
+31
+R6
+R24
+R7
+!i113 0
+R8
+R9
+R10
+vtest_bench
+R1
+R11
+DXx4 work 7 apb_pkg 0 22 kCgb59NRiIHcMk8Zf]^fg2
+R2
+!i10b 1
+!s100 OR:Ck^CJdXe3`g;UHI;233
+IjcGNm3B4<mA8bODJ:cdi23
+S1
+R0
+w1792153777
 8../tb/test_bench.sv
 F../tb/test_bench.sv
-!i122 3
-L0 3 115
+!i122 0
+L0 3 52
+R4
 R5
-R6
 r1
 !s85 0
 31
+R6
+R24
 R7
-R10
-R8
 !i113 0
+R8
 R9
-R2
+R10
 vtimer_top
-R3
-R4
+R25
 !i10b 1
 !s100 WMQ[326eNP_oeB8kWCH8K1
-IWmgGf9:LUDQ@=bAESd_R:0
-R1
-w1789537400
-8../rtl_final/timer_top.v
-F../rtl_final/timer_top.v
-!i122 3
+IJfL^<ZafTiJ8EN:>W9m;A2
+R0
+R26
+8../rtl/timer_top.v
+F../rtl/timer_top.v
+!i122 0
 L0 1 118
+R4
 R5
-R6
 r1
 !s85 0
 31
+R6
+R24
 R7
-R10
-R8
 !i113 0
+R8
 R9
-R2
+R10
